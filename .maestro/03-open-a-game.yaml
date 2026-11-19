@@ -1,0 +1,11 @@
+# Smoke flow 3: from the Games tab, open a game intro and start a
+# round. Assumes a signed-in session already exists on the device
+# (run flow 2 first, or sign in manually once).
+appId: com.memorytrap.app
+---
+- launchApp
+- tapOn: "Games"
+- assertVisible: "GAMES"
+- tapOn: "Pattern Recall"
+- assertVisible:
+    text: ".*(Play|Start).*"
