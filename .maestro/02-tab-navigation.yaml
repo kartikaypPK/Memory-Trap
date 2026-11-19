@@ -1,0 +1,24 @@
+# Smoke flow 2: guest sign-in, then walk every main tab.
+# NOTE: guest sign-in needs Anonymous sign-ins enabled in the
+# Supabase dashboard (Phase 1 user step). If it is disabled, this
+# flow stops at the welcome screen — that is the app behaving as
+# designed, not a flow bug.
+appId: com.memorytrap.app
+---
+- launchApp
+- tapOn: "Play as guest"
+# First launch as a guest goes through profile setup: pick any
+# suggested name/handle the screen offers, or type one.
+- assertVisible:
+    text: ".*(Profile|Create|handle).*"
+    optional: true
+- tapOn: "Games"
+- assertVisible: "GAMES"
+- tapOn: "Battle"
+- assertVisible: "BATTLE"
+- tapOn: "Progress"
+- assertVisible: "PROGRESS"
+- tapOn: "Profile"
+- assertVisible: "PROFILE"
+- tapOn: "Home"
+- assertVisible: "HOME"
