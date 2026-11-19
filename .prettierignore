@@ -1,0 +1,7 @@
+node_modules
+dist
+supabase/functions
+src/types/database.generated.ts
+web
+.maestro
+package-lock.json
