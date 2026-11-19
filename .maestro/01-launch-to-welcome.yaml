@@ -1,0 +1,10 @@
+# Smoke flow 1: the app launches and lands on the welcome screen
+# (signed-out state). Requires a fresh install / cleared app data —
+# see README.md in this folder.
+appId: com.memorytrap.app
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Memory Trap"
+- assertVisible: "Continue with email"
+- assertVisible: "Play as guest"
